@@ -12,6 +12,7 @@ function onReady() {
   $('#clearInputs').on('click', resetInputs);
   $('.numberButton').on('click', showNumber);
   $('.decimalButton').on('click', showDecimal);
+  $('.operationButtonStretch').on('click', showOperation);
   $('#calculatorInputStretch').on('submit', calculateStretch);
 }
 
@@ -173,6 +174,15 @@ function showDecimal() {
   // console logs used for testing, debugging, and process tracking
   if (verbose) {
     console.log('*** in showDecimal() ***');
+    console.log('\tthis:', $(this).val());
+  }
+}
+
+function showOperation() {
+  $('#displayBar').append($(this).val());
+  // console logs used for testing, debugging, and process tracking
+  if (verbose) {
+    console.log('*** in showOperation() ***');
     console.log('\tthis:', $(this).val());
   }
 }
