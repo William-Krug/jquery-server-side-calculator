@@ -13,5 +13,33 @@
     <header>
       <h1>Server Side Calculator</h1>
     </header>
+
+    <body>
+      <div id="inputField">
+        <form id="calculatorInput">
+          <input
+            type="number"
+            name=""
+            id="firstNumberInput"
+            placeholder="First Number"
+          />
+          <input type="button" value="+" id="additionInput" />
+          <input type="button" value="-" id="subtractionInput" />
+          <input type="button" value="*" id="multiplicationInput" />
+          <input type="button" value="/" id="divisionInput" />
+          <input
+            type="number"
+            name=""
+            id="secondNumberInput"
+            placeholder="Second Number"
+          />
+          <input type="submit" value="=" />
+          <input type="reset" value="C" id="clearInputs" />
+        </form>
+      </div>
+      <div>
+        <ul id="historyLog"></ul>
+      </div>
+    </body>
   </body>
 </html>

@@ -3,17 +3,18 @@
 - [x] `npm init`
 - [x] `npm install express`
 - [x] update json with `start` command
+- [x] .gitignore `node_modules/`
 - [x] `require('express')` (server)
-- [ ] set up app listener (server)
-- [ ] set up app (server)
+- [x] set up app listener (server)
+- [x] set up app (server)
 - [x] client.js creation
 - [x] create index.html
 - [x] create style.css
 - [x] link css to index
 - [x] source jQuery into index
 - [x] source js into index
-- [ ] 2 input elements (DOM)
-- [ ] math operation (dropdown) (DOM)
+- [x] 2 input elements (DOM)
+- [ ] math operation (buttons) (DOM)
 - [ ] submit `=` (DOM)
   - [ ] create object with inputs
   - [ ] POST object to server
