@@ -14,10 +14,10 @@
       <h1>Server Side Calculator</h1>
     </header>
 
-    <!-- Base Mode Calculator -->
+    <!-- Base Mode Calculator
     <main>
       <div id="inputField">
-        <!-- Calculator inputs -->
+        Calculator inputs
         <form id="calculatorInput">
           <input
             type="number"
@@ -25,7 +25,7 @@
             id="firstNumberInput"
             placeholder="First Number"
           />
-          <!-- Assistance from John Shands on setup of buttons -->
+          Assistance from John Shands on setup of buttons
           <button data-operation="+" class="operationButton">+</button>
           <button data-operation="-" class="operationButton">-</button>
           <button data-operation="*" class="operationButton">*</button>
@@ -44,13 +44,50 @@
         <h2 class="result">Result: <span id="result"></span></h2>
       </div>
       <div>
+        Previous Equations listed here in chronological order
+        <ul id="historyLog"></ul>
+      </div>
+    </main> -->
+
+    <main>
+      <div id="displayBar"></div>
+      <div id="inputField">
+        <!-- Calculator inputs -->
+        <form id="calculatorInput">
+          <div>
+            <input type="button" value="7" class="numberButton square" />
+            <input type="button" value="8" class="numberButton square" />
+            <input type="button" value="9" class="numberButton square" />
+            <input type="button" value="+" class="operationButton square" />
+            <input type="button" value="C" id="clearInputs" class="square" />
+          </div>
+          <div>
+            <input type="button" value="4" class="numberButton square" />
+            <input type="button" value="5" class="numberButton square" />
+            <input type="button" value="6" class="numberButton square" />
+            <input type="button" value="-" class="operationButton square" />
+          </div>
+          <div>
+            <input type="button" value="1" class="numberButton square" />
+            <input type="button" value="2" class="numberButton square" />
+            <input type="button" value="3" class="numberButton square" />
+            <input type="button" value="*" class="operationButton square" />
+          </div>
+          <div>
+            <input type="button" value="0" class="numberButton square" />
+            <input type="button" value="." class="decimalButton square" />
+            <input type="submit" value="=" class="square" />
+            <input type="button" value="/" class="operationButton square" />
+          </div>
+        </form>
+      </div>
+      <div>
+        <h2 class="result">Result: <span id="result"></span></h2>
+      </div>
+      <div>
         <!-- Previous Equations listed here in chronological order -->
         <ul id="historyLog"></ul>
       </div>
     </main>
-
-    <!-- <main>
-      <div id="inputField"></div>
-    </main> -->
   </body>
 </html>

@@ -123,7 +123,9 @@ function renderEquationHistory() {
 }
 
 /**
+ * Function makes a GET call to the equation history from the server
  *
+ * Successful GET results in the latest result being rendered to the DOM
  */
 function renderResult() {
   // console logs used for testing, debugging, and process tracking

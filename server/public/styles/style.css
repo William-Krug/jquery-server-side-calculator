@@ -9,6 +9,23 @@ header {
   padding: 10px 20px;
 }
 
+#displayBar {
+  display: inline-block;
+  width: 200px;
+  height: 20px;
+  border: 2px solid #c1c1cc;
+  margin: 10px 10px 0 30px;
+  padding: 10px 20px 10px 0;
+}
+
+.square {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin: 3px;
+  /* text-align: center; */
+}
+
 .result {
   margin: 10px;
   padding: 10px 20px;
