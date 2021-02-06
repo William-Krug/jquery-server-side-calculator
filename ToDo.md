@@ -18,13 +18,13 @@
 - [x] submit `=` (DOM)
   - [x] create object with inputs
   - [x] POST object to server
-- [ ] `C` button to clear input fields
-- [ ] compute entered equation (server)
-  - [ ] handle addition
-  - [ ] handle subtraction
-  - [ ] handle multiplication
-  - [ ] handle division
-  - [ ] send back 'OK' (return)
+- [x] `C` button to clear input fields
+- [x] compute entered equation (server)
+  - [x] handle addition
+  - [x] handle subtraction
+  - [x] handle multiplication
+  - [x] handle division
+  - [x] send back 'OK' (return)
 - [ ] GET the result
 - [ ] keep record of all operations and solutions (server)
   - [ ] GET display all previous calculations

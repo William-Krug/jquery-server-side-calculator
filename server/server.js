@@ -1,4 +1,6 @@
 const express = require('express');
+const calculate = require('./modules/calculate');
+const equationHistory = require('./modules/equation_history');
 
 const app = express();
 const port = 5000;
@@ -10,6 +12,19 @@ app.use(express.urlencoded({ extended: true }));
 
 app.listen(port, function () {
   console.log(`I'm listening....`, port);
+});
+
+// GET endpoint
+/**
+ * GET /equationHistory
+ *
+ * Return an array with all the previous equations
+ */
+app.get('/equationHistory', function (req, res) {
+  if (verbose) {
+    console.log('*** in /equationHistory ***');
+  }
+  res.send(equationHistory);
 });
 
 // POST endpoint
@@ -26,28 +41,12 @@ app.listen(port, function () {
  * }
  */
 app.post('/calculate', (req, res) => {
+  equationHistory.push(calculate(req.body));
   if (verbose) {
     console.log('*** in /calculate ***');
-    console.log('\treq.body:', req.body);
+    console.log('req.body:', req.body);
+    console.log('equationHistory:', equationHistory);
   }
   res.sendStatus(200);
   // res.status(200).send(...);
 });
-
-function calculate(equation) {
-  switch (equation.operation) {
-    case 'addition':
-      equation.result = equation.firstNumber + equation.secondNumber;
-      break;
-    case 'subtraction':
-      equation.result = equation.firstNumber - equation.secondNumber;
-      break;
-    case 'multiplication':
-      equation.result = equation.firstNumber * equation.secondNumber;
-      break;
-    case 'division':
-      equation.result = equation.firstNumber / equation.secondNumber;
-      break;
-  }
-  return equation;
-}

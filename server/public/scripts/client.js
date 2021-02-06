@@ -11,6 +11,10 @@ function onReady() {
   $('#clearInputs').on('click', resetInputs);
 }
 
+/**
+ *
+ * @param {*} event
+ */
 function calculate(event) {
   event.preventDefault();
   const newEquation = {
@@ -34,7 +38,7 @@ function calculate(event) {
     .then(function (response) {
       console.log('Banana Yeah!!!');
     })
-    .then(function (error) {
+    .catch(function (error) {
       console.log('wah wah Banana No');
     });
 }
@@ -55,6 +59,10 @@ function setOperation(event) {
   }
 }
 
+/**
+ * Function resets the input elements on the DOM and resets
+ * ...the "operation" variable to an empty string
+ */
 function resetInputs() {
   operation = '';
   $('#firstNumberInput').val('');
@@ -64,3 +72,45 @@ function resetInputs() {
     console.log('\toperation:', operation);
   }
 }
+
+function getEquationHistory() {
+  const ajaxOptions = {
+    url: '/equationHistory',
+    method: 'GET',
+  };
+  $.ajax(ajaxOptions)
+    .then(function (response) {
+      console.log('Banana Yeah!!!');
+    })
+    .catch(function (error) {
+      console.log('Banana No');
+    });
+}
+
+// let ajaxOptions = {
+//   url: '/allTheQuotes',
+//   method: 'GET',
+// };
+// $.ajax(ajaxOptions)
+//   // Promise to call me back later, plz
+//   .then(function (quoteList) {
+//     console.log('got a response:', quoteList);
+//     $('#quoteList').empty();
+//     // Take array of quotes
+//     // loop d' lop through em
+//     for (let quote of quoteList) {
+//       // and render (.append()) to the DOM
+//       $('#quoteList').append(`
+//           <li>
+//             <blockquote>
+//               "${quote.quote}"
+//               —${quote.author}
+//             </blockquote>
+//           </li>
+//         `);
+//     }
+//   })
+//   .catch(function () {
+//     // alert('ruh roh... Better contact your webmaster.');
+//     $('#messages').text('ruh roh... Better contact your webmaster.');
+//   });
