@@ -9,13 +9,17 @@
 
 _Duration: 1 Weekend Sprint_
 
-Directly above this is how long it took you to develop the project. Your project description goes here. What problem did you solve? How did you solve it?
+This application is a basic calculator that can perform addition, subtraction, multiplication, and division. Users interact with the DOM and calculations are computed on the server. A history log of previous calculations are stored below the input field.
 
 To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
 
 ## Screen Shot
 
-Include one or two screen shots of your project here (optional). Remove if unused.
+### Base Mode
+
+[Start](./images/base-mode-start.png)
+
+[History_Log](./images/base-mode-history-log.png)
 
 ### Prerequisites
 
@@ -39,8 +43,6 @@ If your application has secret keys (for example -- Twilio), make sure you tell 
 
 ## Usage
 
-How does someone use this application? Tell a user story here.
-
 ### Base Mode
 
 1. Enter your first operand in the input field called `First Number`
@@ -49,6 +51,15 @@ How does someone use this application? Tell a user story here.
 4. Click the `=` button to see the result of your equation
 5. A log history of all calculations (current and previous) will be displayed below the input field
 6. Click the `C` button to clear the inputs (log history will not be cleared)
+
+### Stretch MOde
+
+1. a
+2. b
+3. c
+4. d
+5. e
+6. f
 
 ## Built With
 

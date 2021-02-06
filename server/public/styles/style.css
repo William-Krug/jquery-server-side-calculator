@@ -1,3 +1,26 @@
 h1 {
   color: #ed2939;
+  font-size: 48px;
+}
+
+header {
+  background-color: #fdc651;
+  margin: 10px;
+  padding: 10px 20px;
+}
+
+/* .inputField {
+  margin: 10px;
+  padding: 10px 20px;
+} */
+
+#calculatorInput {
+  margin: 10px;
+  padding: 10px 20px;
+}
+
+#historyLog li {
+  list-style: none;
+  font-size: 18px;
+  margin: 5px 0;
 }
