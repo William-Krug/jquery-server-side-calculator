@@ -8,6 +8,7 @@ function onReady() {
   console.log('jQuery is ready');
   $('#calculatorInput').on('submit', calculate);
   $('.operationButton').on('click', setOperation);
+  $('#clearInputs').on('click', resetInputs);
 }
 
 function calculate(event) {
@@ -18,7 +19,7 @@ function calculate(event) {
     secondNumber: Number($('#secondNumberInput').val()),
   };
   if (verbose) {
-    console.log('in calculate()');
+    console.log('*** in calculate() ***');
     console.log('\tnewEquation:', newEquation);
   }
 
@@ -48,8 +49,18 @@ function setOperation(event) {
   event.preventDefault();
   operation = $(this).data('operation');
   if (verbose) {
-    console.log('in setOperation()');
+    console.log('*** in setOperation() ***');
     console.log('\tthis:', $(this).data('operation'));
+    console.log('\toperation:', operation);
+  }
+}
+
+function resetInputs() {
+  operation = '';
+  $('#firstNumberInput').val('');
+  $('#secondNumberInput').val('');
+  if (verbose) {
+    console.log('*** in resetInputs() ***');
     console.log('\toperation:', operation);
   }
 }

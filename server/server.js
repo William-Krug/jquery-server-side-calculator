@@ -27,7 +27,7 @@ app.listen(port, function () {
  */
 app.post('/calculate', (req, res) => {
   if (verbose) {
-    console.log('in /calculate');
+    console.log('*** in /calculate ***');
     console.log('\treq.body:', req.body);
   }
   res.sendStatus(200);
@@ -37,32 +37,17 @@ app.post('/calculate', (req, res) => {
 function calculate(equation) {
   switch (equation.operation) {
     case 'addition':
-      return {
-        equation: `${equation.firstNumber} + ${equation.secondNumber}`,
-        result: equation.firstNumber + equation.secondNumber,
-      };
+      equation.result = equation.firstNumber + equation.secondNumber;
       break;
     case 'subtraction':
-      return {
-        equation: `${equation.firstNumber} - ${equation.secondNumber}`,
-        result: equation.firstNumber - equation.secondNumber,
-      };
+      equation.result = equation.firstNumber - equation.secondNumber;
       break;
     case 'multiplication':
-      return {
-        equation: `${equation.firstNumber} * ${equation.secondNumber}`,
-        result: equation.firstNumber * equation.secondNumber,
-      };
+      equation.result = equation.firstNumber * equation.secondNumber;
       break;
     case 'division':
-      return {
-        equation: `${equation.firstNumber} / ${equation.secondNumber}`,
-        result: equation.firstNumber / equation.secondNumber,
-      };
+      equation.result = equation.firstNumber / equation.secondNumber;
       break;
   }
-
-  if (verbose) {
-    console.log('in calculate()');
-  }
+  return equation;
 }

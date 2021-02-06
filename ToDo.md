@@ -15,9 +15,9 @@
 - [x] source js into index
 - [x] 2 input elements (DOM)
 - [x] math operation (buttons) (DOM)
-- [ ] submit `=` (DOM)
+- [x] submit `=` (DOM)
   - [x] create object with inputs
-  - [ ] POST object to server
+  - [x] POST object to server
 - [ ] `C` button to clear input fields
 - [ ] compute entered equation (server)
   - [ ] handle addition
