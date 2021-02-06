@@ -10,9 +10,7 @@ function onReady() {
   $('#calculatorInput').on('submit', calculate);
   $('.operationButton').on('click', setOperation);
   $('#clearInputs').on('click', resetInputs);
-  $('.numberButton').on('click', showNumber);
-  $('.decimalButton').on('click', showDecimal);
-  $('.operationButtonStretch').on('click', showOperation);
+  $('.inputButton').on('click', showInput);
   $('#calculatorInputStretch').on('submit', calculateStretch);
 }
 
@@ -160,30 +158,16 @@ function renderResult() {
 //// *** Stretch Goals Functionality *** ////
 //// *********************************** ////
 
-function showNumber() {
-  $('#displayBar').append($(this).val());
-  // console logs used for testing, debugging, and process tracking
-  if (verbose) {
-    console.log('*** in showNumber() ***');
-    console.log('\tthis:', $(this).val());
-  }
-}
+const equation = [];
 
-function showDecimal() {
+function showInput() {
   $('#displayBar').append($(this).val());
+  equation.push($(this).val());
   // console logs used for testing, debugging, and process tracking
   if (verbose) {
-    console.log('*** in showDecimal() ***');
+    console.log('*** in showInput() ***');
     console.log('\tthis:', $(this).val());
-  }
-}
-
-function showOperation() {
-  $('#displayBar').append($(this).val());
-  // console logs used for testing, debugging, and process tracking
-  if (verbose) {
-    console.log('*** in showOperation() ***');
-    console.log('\tthis:', $(this).val());
+    console.log('\tequation:', equation);
   }
 }
 
