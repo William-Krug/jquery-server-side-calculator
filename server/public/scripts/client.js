@@ -11,6 +11,7 @@ function onReady() {
   $('.operationButton').on('click', setOperation);
   $('#clearInputs').on('click', resetInputs);
   $('.numberButton').on('click', showNumber);
+  $('.decimalButton').on('click', showDecimal);
   $('#calculatorInputStretch').on('submit', calculateStretch);
 }
 
@@ -159,11 +160,19 @@ function renderResult() {
 //// *********************************** ////
 
 function showNumber() {
-  $displayBar = $('#displayBar');
-  $displayBar.append($(this).val());
+  $('#displayBar').append($(this).val());
   // console logs used for testing, debugging, and process tracking
   if (verbose) {
     console.log('*** in showNumber() ***');
+    console.log('\tthis:', $(this).val());
+  }
+}
+
+function showDecimal() {
+  $('#displayBar').append($(this).val());
+  // console logs used for testing, debugging, and process tracking
+  if (verbose) {
+    console.log('*** in showDecimal() ***');
     console.log('\tthis:', $(this).val());
   }
 }
