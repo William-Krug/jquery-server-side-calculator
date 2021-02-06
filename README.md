@@ -1,5 +1,5 @@
 ![MIT LICENSE](https://img.shields.io/github/license/William-Krug/jquery-server-side-calculator.svg?style=flat-square)
-![REPO SIZE](https://img.shields.io/github/repo-size/https:William-Krug/jquery-server-side-calculator.svg?style=flat-square)
+![REPO SIZE](https://img.shields.io/github/repo-size/William-Krug/jquery-server-side-calculator.svg?style=flat-square)
 ![TOP_LANGUAGE](https://img.shields.io/github/languages/top/William-Krug/jquery-server-side-calculator.svg?style=flat-square)
 ![FORKS](https://img.shields.io/github/forks/https:William-Krug/jquery-server-side-calculator.svg?style=social)
 
@@ -17,9 +17,9 @@ To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.he
 
 ### Base Mode
 
-[Start](./images/base-mode-start.png)
+![Start](https://github.com/William-Krug/jquery-server-side-calculator/blob/master/images/base-mode-start.png)
 
-[History_Log](./images/base-mode-history-log.png)
+![History_Log](https://github.com/William-Krug/jquery-server-side-calculator/blob/master/images/base-mode-history-log.png)
 
 ### Prerequisites
 
