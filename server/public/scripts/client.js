@@ -48,6 +48,7 @@ function calculate(event) {
     .then(function (response) {
       console.log('Banana Yeah!!!');
       renderEquationHistory();
+      renderResult();
     })
     .catch(function (error) {
       console.log('wah wah Banana No');
@@ -97,7 +98,7 @@ function resetInputs() {
 function renderEquationHistory() {
   // console logs used for testing, debugging, and process tracking
   if (verbose) {
-    console.log('*** in getEquationHistory() ***');
+    console.log('*** in renderEquationHistory() ***');
   }
   const ajaxOptions = {
     url: '/equationHistory',
@@ -115,6 +116,30 @@ function renderEquationHistory() {
           </li>
         `);
       }
+    })
+    .catch(function (error) {
+      console.log('Banana No');
+    });
+}
+
+/**
+ *
+ */
+function renderResult() {
+  // console logs used for testing, debugging, and process tracking
+  if (verbose) {
+    console.log('*** in renderResult() ***');
+  }
+  const ajaxOptions = {
+    url: '/equationHistory',
+    method: 'GET',
+  };
+  $.ajax(ajaxOptions)
+    .then(function (equationHistory) {
+      console.log('Banana Yeah!!!');
+      const $result = $('#result');
+      $result.empty();
+      $result.append(equationHistory[equationHistory.length - 1].result);
     })
     .catch(function (error) {
       console.log('Banana No');
