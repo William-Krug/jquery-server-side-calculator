@@ -14,9 +14,9 @@
 - [x] source jQuery into index
 - [x] source js into index
 - [x] 2 input elements (DOM)
-- [ ] math operation (buttons) (DOM)
+- [x] math operation (buttons) (DOM)
 - [ ] submit `=` (DOM)
-  - [ ] create object with inputs
+  - [x] create object with inputs
   - [ ] POST object to server
 - [ ] `C` button to clear input fields
 - [ ] compute entered equation (server)

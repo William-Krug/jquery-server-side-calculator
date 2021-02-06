@@ -21,12 +21,27 @@ function calculate(event) {
     console.log('in calculate()');
     console.log('\tnewEquation:', newEquation);
   }
+
+  // POST quote data to server
+  $.ajax({
+    data: {
+      calculation: newEquation,
+    },
+    url: '/calculate',
+    method: 'POST',
+  })
+    .then(function (response) {
+      console.log('Banana Yeah!!!');
+    })
+    .then(function (error) {
+      console.log('wah wah Banana No');
+    });
 }
 
 /**
  * Function sets the mathematical operation from user input
  *
- * Assistance by John Shands on setup
+ * Assistance from John Shands on setup
  * @param {*} event
  */
 function setOperation(event) {
