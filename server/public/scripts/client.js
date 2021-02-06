@@ -12,6 +12,7 @@ function onReady() {
   $('#clearInputs').on('click', resetInputs);
   $('.inputButton').on('click', showInput);
   $('#calculatorInputStretch').on('submit', calculateStretch);
+  $('#clearInputsStretch').on('click', clearInputs);
 }
 
 //// ******************************* ////
@@ -167,6 +168,20 @@ function showInput() {
   if (verbose) {
     console.log('*** in showInput() ***');
     console.log('\tthis:', $(this).val());
+    console.log('\tequation:', equation);
+  }
+}
+
+function clearInputs() {
+  const arraySize = equation.length;
+  for (let i = 0; i < arraySize; i++) {
+    equation.pop();
+  }
+  $('#displayBar').empty();
+
+  // console logs used for testing, debugging, and process tracking
+  if (verbose) {
+    console.log('*** in clearInputs() ***');
     console.log('\tequation:', equation);
   }
 }
