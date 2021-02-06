@@ -10,6 +10,8 @@ function onReady() {
   $('#calculatorInput').on('submit', calculate);
   $('.operationButton').on('click', setOperation);
   $('#clearInputs').on('click', resetInputs);
+  $('.numberButton').on('click', showNumber);
+  $('#calculatorInputStretch').on('submit', calculateStretch);
 }
 
 //// ******************************* ////
@@ -155,6 +157,29 @@ function renderResult() {
 //// *********************************** ////
 //// *** Stretch Goals Functionality *** ////
 //// *********************************** ////
+
+function showNumber() {
+  $displayBar = $('#displayBar');
+  $displayBar.append($(this).val());
+  // console logs used for testing, debugging, and process tracking
+  if (verbose) {
+    console.log('*** in showNumber() ***');
+    console.log('\tthis:', $(this).val());
+  }
+}
+
+/**
+ *
+ * @param {*} event
+ */
+function calculateStretch(event) {
+  // Keep DOM from refreshing on 'Submit'
+  event.preventDefault();
+  // console logs used for testing, debugging, and process tracking
+  if (verbose) {
+    console.log('*** in calculateStretch() ***');
+  }
+}
 
 /**
  * Function takes DOM input and stores it in an object
