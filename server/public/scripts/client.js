@@ -6,6 +6,7 @@ let operation = '';
 
 function onReady() {
   console.log('jQuery is ready');
+  renderEquationHistory();
   $('#calculatorInput').on('submit', calculate);
   $('.operationButton').on('click', setOperation);
   $('#clearInputs').on('click', resetInputs);
@@ -37,6 +38,7 @@ function calculate(event) {
   })
     .then(function (response) {
       console.log('Banana Yeah!!!');
+      renderEquationHistory();
     })
     .catch(function (error) {
       console.log('wah wah Banana No');
@@ -73,44 +75,28 @@ function resetInputs() {
   }
 }
 
-function getEquationHistory() {
+function renderEquationHistory() {
+  if (verbose) {
+    console.log('*** in getEquationHistory() ***');
+  }
   const ajaxOptions = {
     url: '/equationHistory',
     method: 'GET',
   };
   $.ajax(ajaxOptions)
-    .then(function (response) {
+    .then(function (equationHistory) {
       console.log('Banana Yeah!!!');
+      const $historyLog = $('#historyLog');
+      $historyLog.empty();
+      for (let equation of equationHistory) {
+        $historyLog.append(`
+          <li>
+            ${equation.calculation.firstNumber} ${equation.calculation.operation} ${equation.calculation.secondNumber} = ${equation.result}
+          </li>
+        `);
+      }
     })
     .catch(function (error) {
       console.log('Banana No');
     });
 }
-
-// let ajaxOptions = {
-//   url: '/allTheQuotes',
-//   method: 'GET',
-// };
-// $.ajax(ajaxOptions)
-//   // Promise to call me back later, plz
-//   .then(function (quoteList) {
-//     console.log('got a response:', quoteList);
-//     $('#quoteList').empty();
-//     // Take array of quotes
-//     // loop d' lop through em
-//     for (let quote of quoteList) {
-//       // and render (.append()) to the DOM
-//       $('#quoteList').append(`
-//           <li>
-//             <blockquote>
-//               "${quote.quote}"
-//               —${quote.author}
-//             </blockquote>
-//           </li>
-//         `);
-//     }
-//   })
-//   .catch(function () {
-//     // alert('ruh roh... Better contact your webmaster.');
-//     $('#messages').text('ruh roh... Better contact your webmaster.');
-//   });

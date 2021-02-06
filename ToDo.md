@@ -25,12 +25,12 @@
   - [x] handle multiplication
   - [x] handle division
   - [x] send back 'OK' (return)
-- [ ] GET the result
-- [ ] keep record of all operations and solutions (server)
-  - [ ] GET display all previous calculations
-  - [ ] update calculations display after each calculation
-  - [ ] history should persist page refresh
-  - [ ] history should reset with server restart
+- [x] GET the result
+- [x] keep record of all operations and solutions (server)
+  - [x] GET display all previous calculations
+  - [x] update calculations display after each calculation
+  - [x] history should persist page refresh
+  - [x] history should reset with server restart
 
 ## Stretch:
 

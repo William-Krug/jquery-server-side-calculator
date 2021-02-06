@@ -5,22 +5,22 @@
  */
 function calculate(equation) {
   switch (equation.calculation.operation) {
-    case 'addition':
+    case '+':
       equation.result =
         Number(equation.calculation.firstNumber) +
         Number(equation.calculation.secondNumber);
       break;
-    case 'subtraction':
+    case '-':
       equation.result =
         Number(equation.calculation.firstNumber) -
         Number(equation.calculation.secondNumber);
       break;
-    case 'multiplication':
+    case '*':
       equation.result =
         Number(equation.calculation.firstNumber) *
         Number(equation.calculation.secondNumber);
       break;
-    case 'division':
+    case '/':
       equation.result =
         Number(equation.calculation.firstNumber) /
         Number(equation.calculation.secondNumber);
