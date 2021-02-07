@@ -21,6 +21,12 @@ To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.he
 
 ![History_Log](https://github.com/William-Krug/jquery-server-side-calculator/blob/master/images/base-mode-history-log.png)
 
+### Stretch Goals
+
+![Start](https://github.com/William-Krug/jquery-server-side-calculator/blob/master/images/base-mode-start.png)
+
+![History_Log](https://github.com/William-Krug/jquery-server-side-calculator/blob/master/images/base-mode-history-log.png)
+
 ### Prerequisites
 
 Link to software that is required to install the app (e.g. node).
