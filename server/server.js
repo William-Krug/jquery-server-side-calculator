@@ -1,7 +1,6 @@
 const express = require('express');
 const calculate = require('./modules/calculate');
 const equationHistory = require('./modules/equation_history');
-const calculateStretch = require('./modules/calculate_stretech');
 const equationHistoryStretch = require('./modules/equation_history_stretch');
 
 const app = express();
@@ -42,44 +41,18 @@ app.get('/equationHistory', function (req, res) {
  * {
  *  "calculation": {
  *    "firstNumber": 171,
- *    "operation": 'addition',
+ *    "operation": '+',
  *    "secondNumber": 69
  *  }
  * }
  */
 app.post('/calculate', (req, res) => {
   // Find the result of the POSTed equation and save to the history array
-  equationHistory.push(calculateStretch(req.body));
+  equationHistory.push(calculate(req.body));
 
   // console logs used for testing, debugging, and process tracking
   if (verbose) {
     console.log('*** in /calculate ***');
-    console.log('req.body:', req.body);
-  }
-  res.sendStatus(200);
-});
-
-//// *********************************** ////
-//// *** Stretch Goals Functionality *** ////
-//// *********************************** ////
-
-// POST endpoint
-/**
- * POST /calculateStretch endpoint
- *
- * Accepts a body like:
- * {
- *  "formula": {
- *    "equation": "['171', '+' '77']"
- *  }
- * }
- */
-app.post('/calculateStretch', (req, res) => {
-  equationHistoryStretch.push(calculateStretch(req.body));
-
-  // console logs used for testing, debugging, and process tracking
-  if (verbose) {
-    console.log('*** in /calculateStretch ***');
     console.log('req.body:', req.body);
   }
   res.sendStatus(200);

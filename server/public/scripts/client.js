@@ -10,7 +10,7 @@ function onReady() {
   $('#calculatorInput').on('submit', calculate);
   $('.operationButton').on('click', setOperation);
   $('#clearInputs').on('click', resetInputs);
-  $('.inputButton').on('click', showInput);
+  $('.inputButton').on('click', renderInput);
   $('#calculatorInputStretch').on('submit', calculateStretch);
   $('#clearInputsStretch').on('click', clearInputs);
 }
@@ -161,12 +161,12 @@ function renderResult() {
 
 const equation = [];
 
-function showInput() {
+function renderInput() {
   $('#displayBar').append($(this).val());
   equation.push($(this).val());
   // console logs used for testing, debugging, and process tracking
   if (verbose) {
-    console.log('*** in showInput() ***');
+    console.log('*** in renderInput() ***');
     console.log('\tthis:', $(this).val());
     console.log('\tequation:', equation);
   }
@@ -194,9 +194,9 @@ function calculateStretch(event) {
   // Keep DOM from refreshing on 'Submit'
   event.preventDefault();
 
-  const formula = {
-    equation: equation,
-  };
+  const calculation = decypherArray(equation);
+  renderEquationHistory();
+  renderResult();
 
   // console logs used for testing, debugging, and process tracking
   if (verbose) {
@@ -205,8 +205,8 @@ function calculateStretch(event) {
   }
 
   $.ajax({
-    data: { formula },
-    url: '/calculateStretch',
+    data: { calculation },
+    url: '/calculate',
     method: 'POST',
   })
     .then(function (response) {
@@ -218,30 +218,69 @@ function calculateStretch(event) {
 }
 
 /**
- * Function takes DOM input and stores it in an object
- *
- * POST call is made to store the "equation" to the server
- *
- * Successful POST results in the equation being displayed to DOM
- * @param {*} event
+ * Function takes in an equation in array form and returns an object with
+ * ...the firstNumber in the equation,
+ * ...the operation in the equation, and
+ * ...the secondNumber in the equation
+ * @param {*} equationObject
  */
-function calculate(event) {
-  // POST equation data to server
-  $.ajax({
-    data: {
-      calculation: newEquation,
-    },
-    url: '/calculate',
-    method: 'POST',
-  })
-    .then(function (response) {
-      console.log('Banana Yeah!!!');
-      renderEquationHistory();
-      renderResult();
-    })
-    .catch(function (error) {
-      console.log('wah wah Banana No');
-    });
+function decypherArray(equationArray) {
+  const calculation = {
+    firstNumber: '',
+    operation: '',
+    secondNumber: '',
+  };
+  // Boolean tests to determine which type of operation to use
+  if (equationArray.includes('+')) {
+    calculation.operation = '+';
+    // Find the index of the operand
+    operand = equationArray.indexOf('+');
+    // Convert all array elements before operand into a number data type
+    calculation.firstNumber = Number(equationArray.slice(0, operand).join(''));
+    // Convert all array elements after operand into a number data type
+    calculation.secondNumber = Number(
+      equationArray.slice(operand + 1).join('')
+    );
+  } else if (equationArray.includes('-')) {
+    calculation.operation = '-';
+    // Find the index of the operand
+    operand = equationArray.indexOf('-');
+    // Convert all array elements before operand into a number data type
+    calculation.firstNumber = Number(equationArray.slice(0, operand).join(''));
+    // Convert all array elements after operand into a number data type
+    calculation.secondNumber = Number(
+      equationArray.slice(operand + 1).join('')
+    );
+  } else if (equationArray.includes('*')) {
+    calculation.operation = '*';
+    // Find the index of the operand
+    operand = equationArray.indexOf('*');
+    // Convert all array elements before operand into a number data type
+    calculation.firstNumber = Number(equationArray.slice(0, operand).join(''));
+    // Convert all array elements after operand into a number data type
+    calculation.secondNumber = Number(
+      equationArray.slice(operand + 1).join('')
+    );
+  } else if (equationArray.includes('/')) {
+    calculation.operation = '/';
+    // Find the index of the operand
+    operand = equationArray.indexOf('/');
+    // Convert all array elements before operand into a number data type
+    calculation.firstNumber = Number(equationArray.slice(0, operand).join(''));
+    // Convert all array elements after operand into a number data type
+    calculation.secondNumber = Number(
+      equationArray.slice(operand + 1).join('')
+    );
+  }
+
+  // console logs used for testing, debugging, and process tracking
+  if (verbose) {
+    console.log('*** in decypherArray() ***');
+    console.log('\tequationArray:', equationArray);
+    console.log('\tcalculation', calculation);
+  }
+
+  return calculation;
 }
 
 /**
