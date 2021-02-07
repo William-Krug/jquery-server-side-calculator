@@ -1,7 +1,6 @@
 const express = require('express');
 const calculate = require('./modules/calculate');
 const equationHistory = require('./modules/equation_history');
-const equationHistoryStretch = require('./modules/equation_history_stretch');
 
 const app = express();
 const port = 5000;
@@ -14,10 +13,6 @@ app.use(express.urlencoded({ extended: true }));
 app.listen(port, function () {
   console.log(`I'm listening....`, port);
 });
-
-//// ******************************* ////
-//// *** Base Mode Functionality *** ////
-//// ******************************* ////
 
 // GET endpoint
 /**
