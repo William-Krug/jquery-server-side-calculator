@@ -23,9 +23,9 @@ To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.he
 
 ### Stretch Goals
 
-![Start](https://github.com/William-Krug/jquery-server-side-calculator/blob/master/images/base-mode-start.png)
+![Start](https://github.com/William-Krug/jquery-server-side-calculator/blob/master/images/stretch-goals-start.png)
 
-![History_Log](https://github.com/William-Krug/jquery-server-side-calculator/blob/master/images/base-mode-history-log.png)
+![History_Log](https://github.com/William-Krug/jquery-server-side-calculator/blob/master/images/stretch-goals-history-log.png)
 
 ### Prerequisites
 
