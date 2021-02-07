@@ -60,12 +60,11 @@ If your application has secret keys (for example -- Twilio), make sure you tell 
 
 ### Stretch MOde
 
-1. a
-2. b
-3. c
-4. d
-5. e
-6. f
+1. Use the keypad (buttons) to input the desired equation
+2. The entered equation will display above the keypad in the display bar as each button is selected
+3. Click the `=` button to see the result o your equation
+4. A log history of all calculations (current and previous) will be displayed below the input field
+5. Click the `C` button to clear the inputs (log history will not be cleared)
 
 ## Built With
 

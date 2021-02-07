@@ -199,6 +199,7 @@ function calculateStretch(event) {
   event.preventDefault();
 
   const calculation = decypherArray(equation);
+  checkEquationObject(calculation);
 
   // console logs used for testing, debugging, and process tracking
   if (verbose) {
@@ -285,4 +286,34 @@ function decypherArray(equationArray) {
   }
 
   return calculation;
+}
+
+function checkEquationObject(equationObject) {
+  if (
+    equationObject.firstNumber === undefined ||
+    equationObject.firstNumber === ''
+  ) {
+    alert(
+      '*** ERROR: Missing Parameter ***  Please try again and enter your first number'
+    );
+  } else if (
+    equationObject.operation === undefined ||
+    equationObject.operation === ''
+  ) {
+    alert(
+      '*** ERROR: Missing Parameter ***  Please try again and enter your operation'
+    );
+  } else if (
+    equationObject.secondNumber === undefined ||
+    equationObject.secondNumber === ''
+  ) {
+    alert(
+      '*** ERROR: Missing Parameter ***  Please try again and enter your second number'
+    );
+  }
+
+  // console logs used for testing, debugging, and process tracking
+  if (verbose) {
+    console.log('*** in checkEquationObject() ***');
+  }
 }
