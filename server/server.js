@@ -49,7 +49,7 @@ app.get('/equationHistory', function (req, res) {
  */
 app.post('/calculate', (req, res) => {
   // Find the result of the POSTed equation and save to the history array
-  equationHistory.push(calculate(req.body));
+  equationHistory.push(calculateStretch(req.body));
 
   // console logs used for testing, debugging, and process tracking
   if (verbose) {
