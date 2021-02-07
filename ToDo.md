@@ -34,7 +34,8 @@
 
 ## Stretch:
 
-- [ ] interface calculator
+- [x] interface calculator
+- [x] display for input
 - [ ] POST only if all necessary input is ready
   - [ ] show alert if something was left empty
   - [ ] don't send bad or incomplete data

@@ -193,10 +193,28 @@ function clearInputs() {
 function calculateStretch(event) {
   // Keep DOM from refreshing on 'Submit'
   event.preventDefault();
+
+  const formula = {
+    equation: equation,
+  };
+
   // console logs used for testing, debugging, and process tracking
   if (verbose) {
     console.log('*** in calculateStretch() ***');
+    console.log('\tequation:', equation);
   }
+
+  $.ajax({
+    data: { formula },
+    url: '/calculateStretch',
+    method: 'POST',
+  })
+    .then(function (response) {
+      console.log('Oh Banana Yeah!!!');
+    })
+    .catch(function (error) {
+      console.log('ruh roh... Banana No');
+    });
 }
 
 /**
@@ -208,22 +226,6 @@ function calculateStretch(event) {
  * @param {*} event
  */
 function calculate(event) {
-  // Keep DOM from refreshing on 'Submit'
-  event.preventDefault();
-
-  // capture DOM inputs
-  const newEquation = {
-    firstNumber: Number($('#firstNumberInput').val()),
-    operation: operation,
-    secondNumber: Number($('#secondNumberInput').val()),
-  };
-
-  // console logs used for testing, debugging, and process tracking
-  if (verbose) {
-    console.log('*** in calculate() ***');
-    console.log('\tnewEquation:', newEquation);
-  }
-
   // POST equation data to server
   $.ajax({
     data: {
