@@ -288,29 +288,34 @@ function decypherArray(equationArray) {
   return calculation;
 }
 
+/**
+ *
+ * @param {*} equationObject
+ */
 function checkEquationObject(equationObject) {
+  let missingParameter = false;
   if (
     equationObject.firstNumber === undefined ||
     equationObject.firstNumber === ''
   ) {
-    alert(
-      '*** ERROR: Missing Parameter ***  Please try again and enter your first number'
-    );
+    missingParameter = true;
   } else if (
     equationObject.operation === undefined ||
     equationObject.operation === ''
   ) {
-    alert(
-      '*** ERROR: Missing Parameter ***  Please try again and enter your operation'
-    );
+    missingParameter = true;
   } else if (
     equationObject.secondNumber === undefined ||
     equationObject.secondNumber === ''
   ) {
-    alert(
-      '*** ERROR: Missing Parameter ***  Please try again and enter your second number'
-    );
+    missingParameter = true;
   }
+
+  missingParameter
+    ? alert(
+        '*** ERROR: Missing Parameter ***  Please try again and enter your first number'
+      )
+    : console.log('no missing parameters');
 
   // console logs used for testing, debugging, and process tracking
   if (verbose) {
